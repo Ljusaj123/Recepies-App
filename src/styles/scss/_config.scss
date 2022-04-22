@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-family;
+  color: $Space-cadet;
+}
+
+h1 {
+  font-size: $h1-Query;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-size: $h2-Query;
+  margin: 1rem 0;
+}
+
+p {
+  font-size: $p-Query;
+  margin: 0.5rem 0;
+}
