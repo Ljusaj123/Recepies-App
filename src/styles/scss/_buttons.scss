@@ -1,0 +1,17 @@
+header-button {
+  background: none;
+  border: 3px solid $Space-cadet;
+  padding: 1rem;
+  width: clamp(50px, 30%, 150px);
+  color: $Space-cadet;
+  font-size: $button-text-Query;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $white-lighter;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
