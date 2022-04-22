@@ -2,7 +2,7 @@ import React from "react";
 
 function Explore() {
   return (
-    <section className="explore">
+    <section className="explore" id="explore">
       <div className="explore-container">
         <div className="container">
           <div className="title-container">
@@ -13,7 +13,7 @@ function Explore() {
         </div>
         <div className="container">
           <div className="title-container">
-            <h1>Coctail</h1>
+            <h1>Cocktail</h1>
             <button className="explore-button">Explore</button>
           </div>
           <img src="/pictures/pexels-live-on-shot-2789328.jpg" alt="" />
