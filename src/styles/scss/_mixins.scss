@@ -1,4 +1,4 @@
-@mixin universal-flex-design($justify, $align) {
+@mixin universal-flex-display($justify, $align) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
