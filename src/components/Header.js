@@ -11,7 +11,7 @@ function Header() {
           <h2>
             Get yourself the best recepies inspiration for lunch! Or party!
           </h2>
-          <button className="header-button">Explore</button>
+          <button className="explore-button">Explore</button>
         </div>
       </div>
     </header>
