@@ -9,7 +9,7 @@ function Header() {
         </div>
         <div className="header-info">
           <h2>
-            Get yourself the best recepies inspiration for lunch! Or party
+            Get yourself the best recepies inspiration for lunch! Or party!
           </h2>
           <button>Explore</button>
         </div>
