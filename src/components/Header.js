@@ -11,7 +11,9 @@ function Header() {
           <h2>
             Get yourself the best recepies inspiration for lunch! Or party!
           </h2>
-          <button className="explore-button">Explore</button>
+          <button className="explore-button">
+            <a href="#explore">Explore</a>
+          </button>
         </div>
       </div>
     </header>
