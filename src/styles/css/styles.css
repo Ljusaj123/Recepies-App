@@ -93,10 +93,6 @@ header .header-container .logo-container {
   width: 100%;
 }
 
-header .header-container .logo-container h1 {
-  cursor: pointer;
-}
-
 header .header-container .header-info {
   height: 80%;
   width: clamp(280px, 80%, 900px);
