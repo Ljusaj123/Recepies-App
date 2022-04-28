@@ -1,0 +1,48 @@
+.single-meal {
+  height: fit-content;
+  padding: 2rem;
+  background-color: $light-pink;
+  @include universal-flex-display(center, center);
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    @include universal-flex-display(center, center);
+    flex-direction: column;
+    position: relative;
+
+    .home-icon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      svg {
+        font-size: 3rem;
+        cursor: pointer;
+      }
+    }
+
+    .tags-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      height: 30vh;
+      margin-bottom: 5rem;
+
+      p {
+        @include universal-flex-display(center, center);
+      }
+    }
+    .picture-ingredient-container {
+      width: 100%;
+      @include universal-flex-display(space-evenly, center);
+      img {
+        border-radius: 50%;
+      }
+    }
+    .instructions {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+}
