@@ -38,6 +38,11 @@ h2 {
   margin: 1rem 0;
 }
 
+h3 {
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  margin: 1rem 0;
+}
+
 p {
   font-size: clamp(1rem, 1.75vw, 1.3rem);
   margin: 0.5rem 0;
@@ -248,4 +253,81 @@ footer .footer-container {
 
 footer .footer-container p {
   text-align: center;
+}
+
+.recepie-section {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2rem;
+  background-color: rgba(221, 170, 170, 0.644);
+}
+
+.recepie-section .recepie-categories {
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 3rem;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  border-bottom: 1rem dotted rgba(118, 127, 199, 0.89);
+}
+
+.recepie-section .recepie-categories .category {
+  margin: 0 auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.recepie-section .recepie-categories .category h2 {
+  pointer-events: none;
+}
+
+.recepie-section .recepie-by-category {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.recepie-section .recepie-by-category .recepie {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(118, 127, 199, 0.89);
+  cursor: pointer;
+}
+
+.recepie-section .recepie-by-category .recepie img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.recepie-section .recepie-by-category .recepie img,
+.recepie-section .recepie-by-category .recepie h3 {
+  pointer-events: none;
 }
