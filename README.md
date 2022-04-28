@@ -79,5 +79,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - [ ] Page for coctail recepies
 - [ ] Page for meal recepies
 - [ ] Page for beers
-- [ ] Blogpost (maybe)
 - [ ] Bookmarks saved to localstorage
+- [ ] scrool to recepies
+- [ ] functions seperate to folder
