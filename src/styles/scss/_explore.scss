@@ -1,0 +1,13 @@
+.explore {
+  height: fit-content;
+  background-color: $light-pink;
+  padding: 1rem;
+  @include universal-flex-display(center, center);
+
+  &-container {
+    height: 100%;
+    width: 100%;
+    @include universal-flex-display(center, center);
+    flex-direction: column;
+  }
+}
