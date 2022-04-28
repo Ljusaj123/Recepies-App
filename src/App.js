@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingleMeal from "./pages/SingleMeal";
 import Home from "./pages/Home";
+import Recepies from "./pages/Recepies";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             </div>
           }
         />
+        <Route path="/recepies/" element={<Recepies />} />
         <Route path="/meals/:id" element={<SingleMeal />} />
       </Routes>
     </BrowserRouter>
