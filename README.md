@@ -12,5 +12,8 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 
 - [ ] Add bookmark feature
 - [ ] Bookmarks saved to localstorage
-- [ ] Single recepie for mobile version
+- [ ] Single recepie style for mobile version
 - [ ] Filter by Area
+- [ ] import Youtube video
+- [ ] Loading
+- [ ] width with footer
