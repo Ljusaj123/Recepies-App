@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-function RecepiesList({ meals }) {
+import MealsContext from "../contexts/MealsContext";
+
+function RecepiesList() {
+  const { meals } = useContext(MealsContext);
+
   return (
-    <div className="recepies-list">
+    <div className="recepies-list" id="list">
       {meals.map((meal, index) => {
         return (
           <Link to={`/meals/${meal.idMeal}`}>

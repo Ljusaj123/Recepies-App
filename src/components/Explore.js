@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Categories from "./Categories";
 import RecepiesList from "./RecepiesList";
+import MealsContext from "../contexts/MealsContext";
 
 function Explore() {
   const [meals, setMeals] = useState([]);
@@ -9,8 +10,15 @@ function Explore() {
     <section className="explore" id="explore">
       <div className="explore-container">
         <h1>Select Category:</h1>
-        <Categories meals={meals} setMeals={setMeals} />
-        <RecepiesList meals={meals} />
+        <MealsContext.Provider
+          value={{
+            meals,
+            setMeals,
+          }}
+        >
+          <Categories />
+          <RecepiesList />
+        </MealsContext.Provider>
       </div>
     </section>
   );

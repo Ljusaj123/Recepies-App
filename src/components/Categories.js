@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import getMealCategories from "../API calls/getMealCategories";
 import getMealsByCategory from "../API calls/getMealsByCategory";
+import MealsContext from "../contexts/MealsContext";
 
-function Categories({ meals, setMeals }) {
+function Categories() {
+  const { setMeals } = useContext(MealsContext);
+
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     getMealCategories()
       .then((data) => {
@@ -11,6 +15,7 @@ function Categories({ meals, setMeals }) {
       })
       .catch((error) => console.log(error));
   }, []);
+
   return (
     <div className="categories">
       {categories.map((category, index) => {
@@ -24,7 +29,9 @@ function Categories({ meals, setMeals }) {
               )
             }
           >
-            <h3>{category.strCategory}</h3>
+            <h3>
+              <a href="#list">{category.strCategory}</a>
+            </h3>
           </div>
         );
       })}
