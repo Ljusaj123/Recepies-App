@@ -1,0 +1,52 @@
+.recepie-section {
+  height: fit-content;
+  padding: 2rem;
+  background-color: $light-pink;
+
+  .recepie-categories {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    border-bottom: 1rem dotted $Space-cadet;
+
+    .category {
+      margin: 0 auto;
+      padding: 1rem;
+      @include universal-flex-display(center, center);
+      cursor: pointer;
+
+      h2 {
+        pointer-events: none;
+      }
+    }
+  }
+
+  .recepie-by-category {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .recepie {
+      padding: 1rem;
+      @include universal-flex-display(space-between, center);
+      border-radius: 10px;
+      border: 1px solid $Space-cadet;
+      cursor: pointer;
+
+      img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+      }
+      img,
+      h3 {
+        pointer-events: none;
+      }
+    }
+  }
+}
