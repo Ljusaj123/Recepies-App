@@ -1,8 +1,6 @@
-import Explore from "./components/Explore";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SingleMeal from "./components/SingleMeal";
+import SingleMeal from "./pages/SingleMeal";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -12,9 +10,7 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <Header />
-              <Explore />
-              <Footer />
+              <Home />
             </div>
           }
         />
