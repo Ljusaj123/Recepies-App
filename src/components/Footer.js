@@ -6,8 +6,8 @@ function Footer() {
       <div className="footer-container">
         <p>Please take a look!</p>
         <p>
-          This app uses beer, food and cocktail API to provide recepies, where
-          user can search, filter and bookmark recipes.
+          This app uses FreeMealAPI (TheMealDB) to provide recepies, where user
+          can search, filter and bookmark recipes.
         </p>
       </div>
     </footer>
