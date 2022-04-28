@@ -14,6 +14,7 @@ function SingleMeal() {
   useEffect(() => {
     getSingleMeal(id).then((data) => setMeal(data[0]));
   }, [id]);
+
   useEffect(() => {
     setIngredients([...getIngredients(meal)]);
   }, [meal]);
