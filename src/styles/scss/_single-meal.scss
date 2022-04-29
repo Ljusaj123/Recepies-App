@@ -1,5 +1,6 @@
 .single-meal {
   height: fit-content;
+  min-height: 100vh;
   padding: 2rem;
   background-color: $light-pink;
   @include universal-flex-display(center, center);
@@ -22,27 +23,34 @@
       }
     }
 
-    .tags-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      height: 30vh;
-      margin-bottom: 5rem;
-
-      p {
-        @include universal-flex-display(center, center);
-      }
-    }
-    .picture-ingredient-container {
+    .meal-info-container {
       width: 100%;
-      @include universal-flex-display(space-evenly, center);
-      img {
-        border-radius: 50%;
+      height: 100%;
+      @include universal-flex-display(center, center);
+      flex-direction: column;
+
+      .tags-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        height: 30vh;
+        margin-bottom: 5rem;
+
+        p {
+          @include universal-flex-display(center, center);
+        }
       }
-    }
-    .instructions {
-      width: 70%;
-      margin: 0 auto;
+      .picture-ingredient-container {
+        width: 100%;
+        @include universal-flex-display(space-evenly, center);
+        img {
+          border-radius: 50%;
+        }
+      }
+      .instructions {
+        width: 70%;
+        margin: 0 auto;
+      }
     }
   }
 }
