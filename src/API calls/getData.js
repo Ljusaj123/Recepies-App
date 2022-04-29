@@ -1,11 +1,14 @@
 const getData = async (url) => {
   const call = await fetch(url);
-  const result = await call.json();
   if (!call.ok) {
-    throw Error("could not fetch data from that resource");
+    throw new Error("Ups! Something went wrong");
   }
-
-  return result.meals;
+  try {
+    const result = await call.json();
+    return result.meals;
+  } catch (e) {
+    throw new Error("Could not fetch data from that resource");
+  }
 };
 
 export default getData;
