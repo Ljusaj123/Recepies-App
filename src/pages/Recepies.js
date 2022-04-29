@@ -23,8 +23,8 @@ function Recepies() {
           <Categories />
           <RecepiesList />
         </MealsContext.Provider>
-        <Footer />
       </div>
+      <Footer />
     </section>
   );
 }

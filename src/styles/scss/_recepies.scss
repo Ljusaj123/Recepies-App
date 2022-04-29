@@ -1,12 +1,11 @@
 .recepies {
   height: fit-content;
-  min-height: 100vh;
   width: 100%;
   background-color: $light-pink;
-  @include universal-flex-display(center, center);
 
   &-container {
     height: 100%;
+    min-height: 80vh;
     width: 100%;
     @include universal-flex-display(center, center);
     flex-direction: column;
