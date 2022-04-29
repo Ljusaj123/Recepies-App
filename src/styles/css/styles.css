@@ -32,26 +32,31 @@ body {
 
 h1 {
   font-size: clamp(3rem, 4.5vw, 6rem);
+  text-align: center;
   margin: 2rem 0;
 }
 
 h2 {
   font-size: clamp(2rem, 4.5vw, 4rem);
+  text-align: center;
   margin: 1rem 0;
 }
 
 h3 {
   font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  text-align: center;
   margin: 1rem 0;
 }
 
 p {
   font-size: clamp(1rem, 1.75vw, 1.3rem);
+  text-align: center;
   margin: 0.5rem 0;
 }
 
 a {
   text-decoration: none;
+  text-align: center;
   color: rgba(118, 127, 199, 0.89);
 }
 
@@ -93,6 +98,10 @@ header .header-container {
 
 header .header-container .logo-container {
   width: 100%;
+}
+
+header .header-container .logo-container h1 {
+  text-align: left;
 }
 
 header .header-container .header-info {
@@ -249,10 +258,6 @@ footer .footer-container p {
   width: 100%;
 }
 
-.recepies-container .recepies-list .error-message p {
-  text-align: center;
-}
-
 .recepies-container .recepies-list .recepie {
   width: 100%;
   max-width: 40vw;
@@ -299,6 +304,7 @@ footer .footer-container p {
 }
 
 .single-meal {
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -344,7 +350,7 @@ footer .footer-container p {
   position: absolute;
   top: 0;
   right: 2rem;
-  font-size: 3rem;
+  font-size: clamp(3rem, 4.5vw, 6rem);
   cursor: pointer;
 }
 
@@ -367,12 +373,12 @@ footer .footer-container p {
 }
 
 .single-meal-container .meal-info-container .tags-container {
+  height: 30vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  height: 30vh;
   margin-bottom: 5rem;
 }
 
@@ -393,15 +399,17 @@ footer .footer-container p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .single-meal-container .meal-info-container .picture-ingredient-container img {
+  width: clamp(200px, 40vw, 700px);
+  height: clamp(200px, 40vw, 700px);
   border-radius: 50%;
 }
 
@@ -422,4 +430,56 @@ footer .footer-container p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .single-meal {
+    padding: 1rem;
+  }
+  .single-meal .single-meal-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .single-meal-container {
+    width: 100%;
+  }
+  .single-meal-container .meal-info-container .picture-ingredient-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .single-meal-container .meal-info-container .picture-ingredient-container .ingredients-container {
+    margin: 2rem 0;
+  }
+}
+
+.not-found {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(221, 170, 170, 0.644);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 1rem;
+}
+
+.not-found a {
+  width: 100%;
+}
+
+.not-found button {
+  margin-top: 3rem;
 }
