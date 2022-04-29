@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingleMeal from "./pages/SingleMeal";
 import Home from "./pages/Home";
 import Recepies from "./pages/Recepies";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         />
         <Route path="/recepies/" element={<Recepies />} />
         <Route path="/meals/:id" element={<SingleMeal />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
