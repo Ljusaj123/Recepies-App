@@ -12,13 +12,12 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 
 - [ ] Add bookmark feature
 - [ ] Bookmarks saved to localstorage
-- [ ] Single recepie style for mobile version
+- [ x ] Mobile version for recepies section
+- [ x ] Mobile version for single recepie section
 - [ ] Filter by Area
-- [ ] import Youtube video
-- [ ] Loading
+- [ x ] import Youtube video
+- [ x ] Loading component
+- [ x ] Error component
+- [ x ] Last page
 - [ ] use fetch
-- [ ] use effect cleanup
-
-- use navigate and navigate
-- poanta nested routers
-- 404 page
+- [ x ] 404 page
