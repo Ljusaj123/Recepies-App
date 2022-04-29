@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getSingleMeal from "../API calls/getSingleMeal";
+import getMealById from "../API calls/getMealById";
 import getIngredients from "../API calls/getIngredients";
 import { HiHome } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,7 +20,7 @@ function SingleMeal() {
 
   useEffect(() => {
     setIsloading(true);
-    getSingleMeal(id)
+    getMealById(id)
       .then((data) => {
         setMeal(data[0]);
         setIsloading(false);

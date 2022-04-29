@@ -1,4 +1,4 @@
-const getSingleMeal = async (query) => {
+const getMealById = async (query) => {
   const call = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query}`
   );
@@ -10,4 +10,4 @@ const getSingleMeal = async (query) => {
   return result.meals;
 };
 
-export default getSingleMeal;
+export default getMealById;
