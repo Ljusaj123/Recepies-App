@@ -4,7 +4,7 @@ const getSingleMeal = async (query) => {
   );
   const result = await call.json();
   if (!call.ok) {
-    throw new Error();
+    throw Error("could not fetch data from that resource");
   }
 
   return result.meals;
