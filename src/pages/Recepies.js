@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 
 function Recepies() {
   const [meals, setMeals] = useState([]);
+  const [errorMeals, setErrorMeals] = useState(null);
 
   return (
     <section className="recepies">
@@ -15,6 +16,8 @@ function Recepies() {
           value={{
             meals,
             setMeals,
+            errorMeals,
+            setErrorMeals,
           }}
         >
           <Categories />
