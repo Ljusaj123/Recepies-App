@@ -16,4 +16,9 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 - [ ] Filter by Area
 - [ ] import Youtube video
 - [ ] Loading
-- [ ] width with footer
+- [ ] use fetch
+- [ ] use effect cleanup
+
+- use navigate and navigate
+- poanta nested routers
+- 404 page
