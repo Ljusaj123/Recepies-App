@@ -199,6 +199,7 @@ footer .footer-container p {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  min-height: 100vh;
   width: 100%;
   background-color: rgba(221, 170, 170, 0.644);
   display: -webkit-box;
@@ -242,6 +243,14 @@ footer .footer-container p {
   gap: 3rem 2rem;
   padding: 0 1rem;
   margin: 3rem 0;
+}
+
+.recepies-container .recepies-list .error-message {
+  width: 100%;
+}
+
+.recepies-container .recepies-list .error-message p {
+  text-align: center;
 }
 
 .recepies-container .recepies-list .recepie {
@@ -293,6 +302,7 @@ footer .footer-container p {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  min-height: 100vh;
   padding: 2rem;
   background-color: rgba(221, 170, 170, 0.644);
   display: -webkit-box;
@@ -307,6 +317,38 @@ footer .footer-container p {
 }
 
 .single-meal-container {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.single-meal-container .home-icon-container {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+}
+
+.single-meal-container .home-icon-container svg {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.single-meal-container .meal-info-container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -322,21 +364,9 @@ footer .footer-container p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
 }
 
-.single-meal-container .home-icon-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.single-meal-container .home-icon-container svg {
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-.single-meal-container .tags-container {
+.single-meal-container .meal-info-container .tags-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -346,7 +376,7 @@ footer .footer-container p {
   margin-bottom: 5rem;
 }
 
-.single-meal-container .tags-container p {
+.single-meal-container .meal-info-container .tags-container p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -358,7 +388,7 @@ footer .footer-container p {
           align-items: center;
 }
 
-.single-meal-container .picture-ingredient-container {
+.single-meal-container .meal-info-container .picture-ingredient-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -371,11 +401,25 @@ footer .footer-container p {
           align-items: center;
 }
 
-.single-meal-container .picture-ingredient-container img {
+.single-meal-container .meal-info-container .picture-ingredient-container img {
   border-radius: 50%;
 }
 
-.single-meal-container .instructions {
-  width: 70%;
+.single-meal-container .meal-info-container .instructions {
+  width: 100%;
   margin: 0 auto;
+}
+
+.single-meal-container .meal-info-container .button-container {
+  width: 100%;
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

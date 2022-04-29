@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import getSingleMeal from "../API calls/getSingleMeal";
 import getIngredients from "../API calls/getIngredients";
 import { HiHome } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Error from "../components/Error";
 import { HalfMalf } from "react-spinner-animated";
 
@@ -11,6 +11,7 @@ import "react-spinner-animated/dist/index.css";
 
 function SingleMeal() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [meal, setMeal] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -39,6 +40,12 @@ function SingleMeal() {
     <section className="single-meal">
       <div className="single-meal-container">
         <div className="home-icon-container">
+          <button
+            className="explore-button"
+            onClick={() => navigate("/recepies")}
+          >
+            Go back
+          </button>
           <Link to="/">
             <HiHome />
           </Link>
@@ -73,6 +80,15 @@ function SingleMeal() {
             <div className="instructions">
               <h3>Instructions:</h3>
               <p>{meal.strInstructions}</p>
+            </div>
+            <div className="button-container">
+              {meal.strYoutube ? (
+                <button className="explore-button">
+                  <a href={meal.strYoutube}>Link to Youtube</a>
+                </button>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         )}

@@ -1,5 +1,6 @@
 .recepies {
   height: fit-content;
+  min-height: 100vh;
   width: 100%;
   background-color: $light-pink;
   @include universal-flex-display(center, center);
