@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getMealById from "../API calls/getMealById";
 import getIngredients from "../API calls/getIngredients";
 import { HiHome } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 import Error from "../components/Error";
 import { HalfMalf } from "react-spinner-animated";
+import getData from "../API calls/getData";
 
 import "react-spinner-animated/dist/index.css";
 
 function SingleMeal() {
   const { id } = useParams();
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const navigate = useNavigate();
 
   const [meal, setMeal] = useState([]);
@@ -20,7 +21,7 @@ function SingleMeal() {
 
   useEffect(() => {
     setIsloading(true);
-    getMealById(id)
+    getData(url)
       .then((data) => {
         setMeal(data[0]);
         setIsloading(false);
@@ -30,7 +31,7 @@ function SingleMeal() {
         setError(error.message);
         setIsloading(false);
       });
-  }, [id]);
+  }, [url]);
 
   useEffect(() => {
     setIngredients([...getIngredients(meal)]);

@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
-import getMealCategories from "../API calls/getMealCategories";
-import getMealsByCategory from "../API calls/getMealsByCategory";
+import React, { useState, useEffect, useContext } from "react";
 import MealsContext from "../contexts/MealsContext";
 import { HalfMalf } from "react-spinner-animated";
 import Error from "./Error";
+import getData from "../API calls/getData";
 
 function Categories() {
   const { setMeals, setErrorMeals } = useContext(MealsContext);
+  const CategoriesListURL = `https://www.themealdb.com/api/json/v1/1/list.php?c=list`;
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsloading] = useState(true);
@@ -14,7 +14,7 @@ function Categories() {
 
   useEffect(() => {
     setIsloading(true);
-    getMealCategories()
+    getData(CategoriesListURL)
       .then((data) => {
         setCategories(data);
         setIsloading(false);
@@ -24,11 +24,12 @@ function Categories() {
         setErrorCat(error.message);
         setIsloading(false);
       });
-  }, []);
+  }, [CategoriesListURL]);
 
   const getMeals = (query) => {
+    const MealsByCatURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`;
     setIsloading(true);
-    getMealsByCategory(query)
+    getData(MealsByCatURL)
       .then((data) => {
         setMeals(data);
         setIsloading(false);
