@@ -14,10 +14,9 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 - [ ] Bookmarks saved to localstorage
 - [ x ] Mobile version for recepies section
 - [ x ] Mobile version for single recepie section
-- [ ] Filter by Area
 - [ x ] import Youtube video
 - [ x ] Loading component
 - [ x ] Error component
 - [ x ] Last page
-- [ ] use fetch
+- [ x ] use fetch
 - [ x ] 404 page
