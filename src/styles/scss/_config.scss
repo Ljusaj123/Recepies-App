@@ -12,25 +12,30 @@ body {
 
 h1 {
   font-size: $h1-Query;
+  text-align: center;
   margin: 2rem 0;
 }
 
 h2 {
   font-size: $h2-Query;
+  text-align: center;
   margin: 1rem 0;
 }
 
 h3 {
   font-size: $h3-Query;
+  text-align: center;
   margin: 1rem 0;
 }
 
 p {
   font-size: $p-Query;
+  text-align: center;
   margin: 0.5rem 0;
 }
 
 a {
   text-decoration: none;
+  text-align: center;
   color: $Space-cadet;
 }
