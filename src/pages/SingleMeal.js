@@ -1,42 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import getIngredients from "../API calls/getIngredients";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { HiHome } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
-import Error from "../components/Error";
 import { HalfMalf } from "react-spinner-animated";
-import getData from "../API calls/getData";
-
 import "react-spinner-animated/dist/index.css";
+import Error from "../components/Error";
+import useGetData from "../API calls/useGetData";
+import getIngredients from "../API calls/getIngredients";
 
 function SingleMeal() {
   const { id } = useParams();
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const navigate = useNavigate();
 
-  const [meal, setMeal] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  const [isLoading, setIsloading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setIsloading(true);
-    getData(url)
-      .then((data) => {
-        setMeal(data[0]);
-        setError(null);
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => {
-        setIsloading(false);
-      });
-  }, [url]);
+  const { meal, error, isLoading } = useGetData(url);
 
   useEffect(() => {
     setIngredients(getIngredients(meal));
   }, [meal]);
+
+  if (isLoading) {
+    return (
+      <HalfMalf
+        text={"Loading..."}
+        bgColor={"#ddaaaa1a"}
+        center={true}
+        width={"130px"}
+        height={"130px"}
+      />
+    );
+  }
+
+  if (error.isError) {
+    return <Error error={error} />;
+  }
 
   return (
     <section className="single-meal">
@@ -52,48 +49,50 @@ function SingleMeal() {
             <HiHome />
           </Link>
         </div>
-        {isLoading && (
-          <HalfMalf
-            text={"Loading..."}
-            bgColor={"#ddaaaa1a"}
-            center={true}
-            width={"130px"}
-            height={"130px"}
-          />
-        )}
-        {error && <Error />}
-        {meal && (
-          <div className="meal-info-container">
-            <h1>{meal.strMeal}</h1>
-            <div className="tags-container">
-              <h3>Tags:</h3> <p>{meal.strTags ? meal.strTags : "None"}</p>
-              <h3>Area:</h3> <p> {meal.strArea}</p>
-              <h3>Category: </h3> <p>{meal.strCategory}</p>
-            </div>
-            <div className="picture-ingredient-container">
-              <img src={meal.strMealThumb} alt="" />
-              <div className="ingredients-container">
-                <h2>Ingredients:</h2>
-                {ingredients.map((i, index) => {
-                  return <p>{i}</p>;
-                })}
+        {meal.map((m, index) => {
+          const {
+            strTags,
+            strMeal,
+            strMealThumb,
+            strArea,
+            strCategory,
+            strInstructions,
+            strYoutube,
+          } = m;
+
+          return (
+            <div className="meal-info-container" key={index}>
+              <h1>{strMeal}</h1>
+              <div className="tags-container">
+                <h3>Tags:</h3> <p>{strTags ? strTags : "None"}</p>
+                <h3>Area:</h3> <p> {strArea}</p>
+                <h3>Category: </h3> <p>{strCategory}</p>
+              </div>
+              <div className="picture-ingredient-container">
+                <img src={strMealThumb} alt="" />
+                <div className="ingredients-container">
+                  <h2>Ingredients:</h2>
+                  {ingredients.map((i, index) => {
+                    return <p key={index}>{i}</p>;
+                  })}
+                </div>
+              </div>
+              <div className="instructions">
+                <h3>Instructions:</h3>
+                <p>{strInstructions}</p>
+              </div>
+              <div className="button-container">
+                {strYoutube ? (
+                  <button className="explore-button">
+                    <a href={strYoutube}>Link to Youtube</a>
+                  </button>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
-            <div className="instructions">
-              <h3>Instructions:</h3>
-              <p>{meal.strInstructions}</p>
-            </div>
-            <div className="button-container">
-              {meal.strYoutube ? (
-                <button className="explore-button">
-                  <a href={meal.strYoutube}>Link to Youtube</a>
-                </button>
-              ) : (
-                ""
-              )}
-            </div>
-          </div>
-        )}
+          );
+        })}
       </div>
     </section>
   );
