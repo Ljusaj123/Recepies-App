@@ -24,17 +24,18 @@ function SingleMeal() {
     getData(url)
       .then((data) => {
         setMeal(data[0]);
-        setIsloading(false);
         setError(null);
       })
       .catch((error) => {
         setError(error.message);
+      })
+      .finally(() => {
         setIsloading(false);
       });
   }, [url]);
 
   useEffect(() => {
-    setIngredients([...getIngredients(meal)]);
+    setIngredients(getIngredients(meal));
   }, [meal]);
 
   return (

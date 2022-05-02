@@ -32,11 +32,12 @@ function Categories() {
     getData(MealsByCatURL)
       .then((data) => {
         setMeals(data);
-        setIsloading(false);
         setErrorMeals(null);
       })
       .catch((error) => {
         setErrorMeals(error.message);
+      })
+      .finally(() => {
         setIsloading(false);
       });
   };
