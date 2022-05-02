@@ -5,7 +5,8 @@ const getData = async (url) => {
   }
   try {
     const result = await call.json();
-    const { meals } = result;
+    const resolved = await Promise.resolve(result);
+    const { meals } = resolved;
     return meals;
   } catch (e) {
     throw new Error("Could not fetch data from that resource");
