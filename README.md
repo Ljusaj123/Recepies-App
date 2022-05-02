@@ -18,5 +18,6 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 - [ x ] Loading component
 - [ x ] Error component
 - [ x ] Last page
-- [ x ] use fetch
+- [ x ] custom hook
 - [ x ] 404 page
+- [ ] scroll to list of meals
