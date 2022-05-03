@@ -6,7 +6,7 @@ React JS, HTML/CSS, Google Fonts, Free MealDB [https://www.themealdb.com/api.php
 
 ## Live
 
-[https://main--taupe-banoffee-cb134c.netlify.app/]
+[https://main--recepiesapp.netlify.app/]
 
 ## ToDo
 
