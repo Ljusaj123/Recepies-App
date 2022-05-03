@@ -16,7 +16,7 @@ function SingleMeal() {
   const { meal, error, isLoading } = useGetData(url);
 
   useEffect(() => {
-    setIngredients(getIngredients(meal));
+    setIngredients(getIngredients(meal[0]));
   }, [meal]);
 
   if (isLoading) {
@@ -37,6 +37,7 @@ function SingleMeal() {
 
   return (
     <section className="single-meal">
+      {console.log(ingredients)}
       <div className="single-meal-container">
         <div className="home-icon-container">
           <button
