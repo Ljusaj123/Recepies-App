@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { HiHome } from "react-icons/hi";
 import { HalfMalf } from "react-spinner-animated";
@@ -12,12 +11,9 @@ function SingleMeal() {
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const navigate = useNavigate();
 
-  const [ingredients, setIngredients] = useState([]);
   const { meal, error, isLoading } = useGetData(url);
 
-  useEffect(() => {
-    setIngredients(getIngredients(meal[0]));
-  }, [meal]);
+  const ingredients = getIngredients(meal[0]);
 
   if (isLoading) {
     return (
@@ -34,10 +30,8 @@ function SingleMeal() {
   if (error.isError) {
     return <Error error={error} />;
   }
-
   return (
     <section className="single-meal">
-      {console.log(ingredients)}
       <div className="single-meal-container">
         <div className="home-icon-container">
           <button
@@ -73,9 +67,11 @@ function SingleMeal() {
                 <img src={strMealThumb} alt="" />
                 <div className="ingredients-container">
                   <h2>Ingredients:</h2>
-                  {ingredients.map((i, index) => {
-                    return <p key={index}>{i}</p>;
-                  })}
+                  {ingredients
+                    ? ingredients.map((i, index) => {
+                        return <p key={index}>{i}</p>;
+                      })
+                    : " "}
                 </div>
               </div>
               <div className="instructions">
