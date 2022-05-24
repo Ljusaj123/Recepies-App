@@ -44,8 +44,9 @@ function SingleMeal() {
             <HiHome />
           </Link>
         </div>
-        {meal.map((m, index) => {
-          const {
+        {meal.map(
+          ({
+            idMeal,
             strTags,
             strMeal,
             strMealThumb,
@@ -53,43 +54,43 @@ function SingleMeal() {
             strCategory,
             strInstructions,
             strYoutube,
-          } = m;
-
-          return (
-            <div className="meal-info-container" key={index}>
-              <h1>{strMeal}</h1>
-              <div className="tags-container">
-                <h3>Tags:</h3> <p>{strTags ? strTags : "None"}</p>
-                <h3>Area:</h3> <p> {strArea}</p>
-                <h3>Category: </h3> <p>{strCategory}</p>
-              </div>
-              <div className="picture-ingredient-container">
-                <img src={strMealThumb} alt="" />
-                <div className="ingredients-container">
-                  <h2>Ingredients:</h2>
-                  {ingredients
-                    ? ingredients.map((i, index) => {
-                        return <p key={index}>{i}</p>;
-                      })
-                    : " "}
+          }) => {
+            return (
+              <div className="meal-info-container" key={idMeal}>
+                <h1>{strMeal}</h1>
+                <div className="tags-container">
+                  <h3>Tags:</h3> <p>{strTags ? strTags : "None"}</p>
+                  <h3>Area:</h3> <p> {strArea}</p>
+                  <h3>Category: </h3> <p>{strCategory}</p>
+                </div>
+                <div className="picture-ingredient-container">
+                  <img src={strMealThumb} alt="" />
+                  <div className="ingredients-container">
+                    <h2>Ingredients:</h2>
+                    {ingredients
+                      ? ingredients.map((i, index) => {
+                          return <p key={index}>{i}</p>;
+                        })
+                      : " "}
+                  </div>
+                </div>
+                <div className="instructions">
+                  <h3>Instructions:</h3>
+                  <p>{strInstructions}</p>
+                </div>
+                <div className="button-container">
+                  {strYoutube ? (
+                    <button className="explore-button">
+                      <a href={strYoutube}>Link to Youtube</a>
+                    </button>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
-              <div className="instructions">
-                <h3>Instructions:</h3>
-                <p>{strInstructions}</p>
-              </div>
-              <div className="button-container">
-                {strYoutube ? (
-                  <button className="explore-button">
-                    <a href={strYoutube}>Link to Youtube</a>
-                  </button>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-          );
-        })}
+            );
+          }
+        )}
       </div>
     </section>
   );

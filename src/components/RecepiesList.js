@@ -25,12 +25,12 @@ function RecepiesList() {
   }
   return (
     <div className="recepies-list">
-      {meals.map((meal, index) => {
+      {meals.map(({ idMeal, strMeal, strMealThumb }) => {
         return (
-          <Link to={`/meals/${meal.idMeal}`} key={index}>
+          <Link to={`/meals/${idMeal}`} key={idMeal}>
             <div className="recepie">
-              <h3>{meal.strMeal}</h3>
-              <img src={meal.strMealThumb} alt="" />
+              <h3>{strMeal}</h3>
+              <img src={strMealThumb} alt="" />
             </div>
           </Link>
         );

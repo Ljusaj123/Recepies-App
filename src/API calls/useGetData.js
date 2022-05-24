@@ -20,14 +20,15 @@ const useGetData = (url) => {
     }
     try {
       const result = await call.json();
-      const resolved = await Promise.resolve(result);
-      setMeal(resolved.meals);
+      const { meals } = result;
+      setMeal(meals);
       setIsloading(false);
     } catch (e) {
       setError({
         isError: true,
         msg: "Could not fetch data from that resource",
       });
+      setIsloading(false);
     }
   };
 
